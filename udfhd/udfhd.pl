@@ -67,7 +67,7 @@ sub generate_fmbr {
 $|=1;
 
 if (! -e $ARGV[0]) {
-  print "Syntax: $0 /dev/diskdevice [label] [size_in_bytes]"
+  die "Syntax: $0 /dev/diskdevice [label] [size_in_bytes]"
 }
 
 my $udfpath="";
@@ -76,7 +76,7 @@ if (-x "/usr/bin/mkudffs") { $udfpath="/usr/bin/mkudffs"; $udftype="mkudffs" }
 if (-x "/sbin/newfs_udf") { $udfpath="/sbin/newfs_udf"; $udftype="newfs_udf" }
 
 if (! defined($udftype)) {
-  print STDERR "Neither mkudffs or newfs_udf could be found. Exiting.";
+  die "Neither mkudffs or newfs_udf could be found. Exiting.";
 }
 
 my $dev=shift @ARGV;
