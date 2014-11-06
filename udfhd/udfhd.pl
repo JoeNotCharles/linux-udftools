@@ -16,6 +16,11 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# See http://sipa.ulyssis.org/software/scripts/udf-harddisk/ for usage instructions.
+#
+# The theory behind this script is described at
+# http://sipa.ulyssis.org/2010/02/filesystems-for-portable-disks/
+
 use strict;
 use Fcntl qw(SEEK_SET SEEK_END);
 
